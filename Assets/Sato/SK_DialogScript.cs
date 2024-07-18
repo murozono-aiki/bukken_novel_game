@@ -7,18 +7,21 @@ public class SK_DialogScript : MonoBehaviour
 {
     [SerializeField] Text nextText;
     int count;
-    // Start is called before the first frame update
+
     void Start()
     {
         count = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             count++;
+        }
+        if(count == 0)
+        {
+            nextText.text = "マウス左クリックで次に進む";
         }
         if(count == 1)
         {
