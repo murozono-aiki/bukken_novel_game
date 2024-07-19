@@ -10,6 +10,7 @@ public class SK_DialogScript : MonoBehaviour
 
     void Start()
     {
+        nextText.enabled = false;
         count = 0;
     }
 
