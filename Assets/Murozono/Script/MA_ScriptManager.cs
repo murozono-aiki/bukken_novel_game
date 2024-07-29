@@ -9,7 +9,7 @@ public class MA_ScriptManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(scenarioFile.scenario);
+        Debug.Log(JsonUtility.ToJson(scenarioFile.scenario));
     }
 
     // Update is called once per frame
