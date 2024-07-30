@@ -48,7 +48,11 @@ public class MA_UIController : MonoBehaviour
             }
             else
             {
-                if (!canGoToNextText) canGoToNextText = true;
+                if (!canGoToNextText)
+                {
+                    canGoToNextText = true;
+                    gameManager.OnCanGoToNextText();
+                }
             }
         }
     }
@@ -88,5 +92,6 @@ public class MA_UIController : MonoBehaviour
     {
         text.maxVisibleCharacters = text.text.Length;
         canGoToNextText = true;
+        gameManager.OnCanGoToNextText();
     }
 }

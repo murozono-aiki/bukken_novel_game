@@ -15,7 +15,7 @@ public class MA_ScriptManager : MonoBehaviour
         }
         else
         {
-            return null;
+            return "";
         }
     }
     public bool IsLastText(int scriptIndex, int textIndex)
