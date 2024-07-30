@@ -566,10 +566,10 @@ RectTransform:
   m_Father: {fileID: 468301635}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.3}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 2000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &693052305
 MonoBehaviour:
@@ -591,11 +591,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c542a91441172d84a899d707f411a7a3, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -784,7 +784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7490566, g: 0.7730396, b: 1, a: 0.392}
+  m_Color: {r: 0.7490566, g: 0.7730396, b: 1, a: 0.8627451}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1221,17 +1221,22 @@ MonoBehaviour:
   - buttonObject: {fileID: 1354541911}
     button: {fileID: 1354541913}
     text: {fileID: 2020511446}
+    actionIndex: 0
   - buttonObject: {fileID: 798825559}
     button: {fileID: 798825561}
     text: {fileID: 1165992648}
+    actionIndex: 0
   - buttonObject: {fileID: 1836625998}
     button: {fileID: 1836626000}
     text: {fileID: 41593797}
+    actionIndex: 0
   - buttonObject: {fileID: 192687760}
     button: {fileID: 192687762}
     text: {fileID: 1357846537}
+    actionIndex: 0
   text: {fileID: 1075354830}
   canGoToNextText: 0
+  image: {fileID: 693052305}
 --- !u!114 &1268318429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1246,6 +1251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scriptManager: {fileID: 1834518241}
   UIController: {fileID: 1268318428}
+  imageFolderPath: Assets/Murozono/Scenario/Images/
   currentScriptIndex: 0
   currentTextIndex: 0
 --- !u!1 &1331584556

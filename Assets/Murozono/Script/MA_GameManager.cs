@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MA_GameManager : MonoBehaviour
 {
     public MA_ScriptManager scriptManager;
     public MA_UIController UIController;
+
+    public string imageFolderPath;
     
     public int currentScriptIndex = 0;
     public int currentTextIndex = 0;
@@ -15,7 +18,7 @@ public class MA_GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UIController.SetText(scriptManager.GetTextFromIndex(currentScriptIndex, currentTextIndex));
+        DisplayScript();
     }
 
     // Update is called once per frame
@@ -32,7 +35,7 @@ public class MA_GameManager : MonoBehaviour
                 else
                 {
                     currentTextIndex++;
-                    UIController.SetText(scriptManager.GetTextFromIndex(currentScriptIndex, currentTextIndex));
+                    DisplayScript();
                 }
             }
         }
@@ -43,7 +46,7 @@ public class MA_GameManager : MonoBehaviour
         is_waitingButtonClick = false;
         currentScriptIndex = scriptManager.GetNextIndex(currentScriptIndex, actionIndex);
         currentTextIndex = 0;
-        UIController.SetText(scriptManager.GetTextFromIndex(currentScriptIndex, currentTextIndex));
+        DisplayScript();
     }
 
     public void OnCanGoToNextText()
@@ -70,6 +73,17 @@ public class MA_GameManager : MonoBehaviour
                 // シナリオの終了（エンディング）
                 ;
             }
+        }
+    }
+
+    void DisplayScript()
+    {
+        string text = scriptManager.GetTextFromIndex(currentScriptIndex, currentTextIndex);
+        string imagePath = scriptManager.GetImagePathFromIndex(currentScriptIndex, currentTextIndex);
+        UIController.SetText(text);
+        if (imagePath != null)
+        {
+            UIController.SetImage(imageFolderPath + imagePath);
         }
     }
 }

@@ -25,6 +25,8 @@ public class MA_UIController : MonoBehaviour
     readonly float feedTime = 0.05f;
     public bool canGoToNextText = false;
 
+    [SerializeField] Image image;
+
     void Start()
     {
         text.maxVisibleCharacters = 0;
@@ -93,5 +95,15 @@ public class MA_UIController : MonoBehaviour
         text.maxVisibleCharacters = text.text.Length;
         canGoToNextText = true;
         gameManager.OnCanGoToNextText();
+    }
+
+
+    public void SetImage(string imagePath)
+    {
+        byte[] bytes = System.IO.File.ReadAllBytes(imagePath);
+        Texture2D texture2D = new(0, 0);
+        texture2D.LoadImage(bytes);
+        Sprite sprite = Sprite.Create(texture2D, new Rect(0f, 0f, texture2D.width, texture2D.height), new Vector2(0.5f, 0.5f));
+        image.sprite = sprite;
     }
 }

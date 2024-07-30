@@ -22,16 +22,17 @@ public class MA_ScriptManager : MonoBehaviour
     {
         return textIndex == scenarioFile.scenario.scenario[scriptIndex].script.Length - 1;
     }
-    public string GetImagePassFromIndex(int scriptIndex, int textIndex)
+    public string GetImagePathFromIndex(int scriptIndex, int textIndex)
     {
-        string imagePass = scenarioFile.scenario.scenario[scriptIndex].script[textIndex].image;
-        if (String.IsNullOrEmpty(imagePass))
+        if (textIndex >= scenarioFile.scenario.scenario[scriptIndex].script.Length) return null;
+        string imagePath = scenarioFile.scenario.scenario[scriptIndex].script[textIndex].image;
+        if (String.IsNullOrEmpty(imagePath))
         {
             return null;
         }
         else
         {
-            return imagePass;
+            return imagePath;
         }
     }
     public string[] GetActionNamesFromIndex(int scriptIndex)
