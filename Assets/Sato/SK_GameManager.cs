@@ -9,6 +9,7 @@ public class SK_GameManager : MonoBehaviour
 
         public SK_UserScriptManager userScriptManager;
         public SK_MainTextController mainTextController;
+        public SK_BranchScript imageManager;
 
         // ユーザスクリプトの、今の行の数値。クリック（タップ）のたびに1ずつ増える。
         [System.NonSerialized] public int lineNumber;
