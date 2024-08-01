@@ -53,7 +53,7 @@ public class SK_BranchScript : MonoBehaviour
     void Update()
     {
         branch1 = gamemanager.lineNumber;
-        if(branch1 == 3)
+        if(branch1 >= 3)
         {
             button.SetActive(true);
             button1.SetActive(true);

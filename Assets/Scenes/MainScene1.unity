@@ -310,7 +310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -29.2768}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -58.5535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &853090333
@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 1056172697}
   - component: {fileID: 1056172696}
   - component: {fileID: 1056172695}
+  - component: {fileID: 1056172699}
   m_Layer: 5
   m_Name: Branch1
   m_TagString: Untagged
@@ -505,7 +506,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1056172696}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1056172699}
+        m_TargetAssemblyTypeName: SK_SceneBranchScript1, Assembly-CSharp
+        m_MethodName: Onclick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1056172696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,6 +578,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 90}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1056172699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056172694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7598ac87d227fb44db1ab9c5971c7a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1075354828
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,8 +644,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 85825770f91bdcd4c97fe726040f0d99, type: 2}
-  m_sharedMaterial: {fileID: 6958286793084617621, guid: 85825770f91bdcd4c97fe726040f0d99, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 779045f364f32074bb53c18f9ed6d8a9, type: 2}
+  m_sharedMaterial: {fileID: -1649011890112244709, guid: 779045f364f32074bb53c18f9ed6d8a9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
