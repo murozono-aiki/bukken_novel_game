@@ -6,6 +6,7 @@ using System.IO;
 public class SK_UserScriptManager : MonoBehaviour
 {
     [SerializeField] TextAsset _textFile;
+    public int branch = 0;
 
         // 文章中の文（ここでは１行ごと）を入れておくためのリスト
         List<string> _sentences = new List<string>();
@@ -25,5 +26,29 @@ public class SK_UserScriptManager : MonoBehaviour
         public string GetCurrentSentence()
         {
             return _sentences[SK_GameManager.Instance.lineNumber];
+        }
+
+         // 文が命令かどうか
+        public bool IsStatement(string sentence)
+        {
+            if (sentence[0] == '&')
+            {
+                return true;
+            }
+            return false;
+        }
+
+        // 命令を実行する
+        public void ExecuteStatement(string sentence)
+        {
+            string[] words = sentence.Split(' ');
+            switch(words[0])
+            {
+                case "&img":
+                    //SK_GameManager.Instance.imageManager.PutImage(words[1], words[2]);
+                    branch = 1;
+                    Debug.Log("success");
+                    break;
+            }
         }
 }

@@ -17,6 +17,14 @@ public class SK_MainTextController : MonoBehaviour
             _time = 0f;
             _feedTime = 0.05f;
             DisplayText();
+            // 最初の行のテキストを表示、または命令を実行
+            string statement = SK_GameManager.Instance.userScriptManager.GetCurrentSentence();
+            if (SK_GameManager.Instance.userScriptManager.IsStatement(statement))
+            {
+                SK_GameManager.Instance.userScriptManager.ExecuteStatement(statement);
+                GoToTheNextLine();
+            }
+            DisplayText();
         }
 
         // Update is called once per frame
