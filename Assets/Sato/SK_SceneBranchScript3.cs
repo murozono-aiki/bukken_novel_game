@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SK_SceneBranchScript1 : MonoBehaviour
+public class SK_SceneBranchScript3 : MonoBehaviour
 {
     public void Onclick()
     {
-        SceneManager.LoadScene("MainScene2");
+        SceneManager.LoadScene("MainScene4");
         SceneManager.UnloadScene("MainScene1");
-        Debug.Log("scene2");
+        Debug.Log("scene4");
     }
 }
 

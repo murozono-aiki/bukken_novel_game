@@ -9,6 +9,7 @@ public class SK_BranchScript : MonoBehaviour
     public SK_UserScriptManager userscript;
     public GameObject button;
     public GameObject button1;
+    public GameObject button2;
     /*[SerializeField] Sprite _background1;
     [SerializeField] GameObject _backgroundObject;
     [SerializeField] GameObject _imagePrefab;*/
@@ -49,14 +50,16 @@ public class SK_BranchScript : MonoBehaviour
     {
         button.SetActive(false);
         button1.SetActive(false);
+        button2.SetActive(false);
     }
     void Update()
     {
         branch1 = gamemanager.lineNumber;
-        if(branch1 >= 3)
+        if(branch1 >= 7)
         {
             button.SetActive(true);
             button1.SetActive(true);
+            button2.SetActive(true);
         }
     }
 }

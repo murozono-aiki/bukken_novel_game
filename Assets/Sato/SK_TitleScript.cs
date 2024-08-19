@@ -15,5 +15,6 @@ public class SK_TitleScript : MonoBehaviour
     void Start()
     {
         SceneManager.UnloadScene("MainScene1");
+        SceneManager.UnloadScene("MainScene2");
     }
 }
