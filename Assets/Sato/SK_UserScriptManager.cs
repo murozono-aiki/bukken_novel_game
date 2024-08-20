@@ -45,9 +45,8 @@ public class SK_UserScriptManager : MonoBehaviour
             switch(words[0])
             {
                 case "&img":
-                    //SK_GameManager.Instance.imageManager.PutImage(words[1], words[2]);
+                    SK_GameManager.Instance.imageManager.PutImage(words[1], words[2]);
                     branch = 1;
-                    Debug.Log("success");
                     break;
             }
         }
