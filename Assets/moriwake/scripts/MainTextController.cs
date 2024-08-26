@@ -2,41 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System;
 
 namespace NovelGame
 {
     public class MainTextController : MonoBehaviour
     {
-     [SerializeField ] private TextMashProUGUI mainTextobject;
+        [SerializeField] TextMeshProUGUI _mainTextObject;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-           //DisplayText();
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
+            DisplayText();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+        // Update is called once per frame
+        void Update()
+        {
+            // クリックされたとき、次の行へ移動
             if (Input.GetMouseButtonUp(0))
             {
                 GoToTheNextLine();
-              //  DisplayText();
+                DisplayText();
             }
-    }
-        private void GoToTheNextLine()
+        }
+
+        // 次の行へ移動
+        public void GoToTheNextLine()
         {
-            throw new NotImplementedException();
-        }//テキストを表示
-        public void DisPlayText()
+            GameManager.Instance.lineNumber++;
+        }
+
+        // テキストを表示
+        public void DisplayText()
         {
-            string sentence =
-        SK_GameManager.Instance.userScriptManager.GetCurrentSentence();
-           // MainTextObject.text = sentence;
+            string sentence = GameManager.Instance.userScriptManager.GetCurrentSentence();
+            _mainTextObject.text = sentence;
         }
     }
-
 }
-       

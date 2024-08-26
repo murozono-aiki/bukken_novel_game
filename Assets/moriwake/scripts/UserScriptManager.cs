@@ -1,18 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
-public class UserScriptManager : MonoBehaviour
+namespace NovelGame
 {
-    // Start is called before the first frame update
-    void Start()
+    public class UserScriptManager : MonoBehaviour
     {
-        
-    }
+        [SerializeField] TextAsset _textFile;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // 文章中の文（ここでは１行ごと）を入れておくためのリスト
+        List<string> _sentences = new List<string>();
+
+        void Awake()
+        {
+            // テキストファイルの中身を、１行ずつリストに入れておく
+            StringReader reader = new StringReader(_textFile.text);
+            while (reader.Peek() != -1)
+            {
+                string line = reader.ReadLine();
+                _sentences.Add(line);
+            }
+        }
+
+        // 現在の行の文を取得する
+        public string GetCurrentSentence()
+        {
+            return _sentences[GameManager.Instance.lineNumber];
+        }
     }
 }
