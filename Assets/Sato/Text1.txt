@@ -1,3 +1,5 @@
+&img background1 backgroundObject
+&img eventCG1 eventObject
 白い虫を見つけた
 セミがたくさん鳴いている学校の帰り道。
 あと1週間で夏休みに入ろうかという日。私は一人で歩いていた。

@@ -48,6 +48,9 @@ public class SK_UserScriptManager : MonoBehaviour
                     SK_GameManager.Instance.imageManager.PutImage(words[1], words[2]);
                     branch = 1;
                     break;
+                case "&rmimg":
+                    SK_GameManager.Instance.imageManager.RemoveImage(words[1]);
+                    break;
             }
         }
 }
